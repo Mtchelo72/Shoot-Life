@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playwrite', sans-serif;
+    background-image: url(../meusite/assents/home2.webp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+}
+
+
+:root {
+    --tamanho-header: 80px;
+    --tamanho-banner: calc(50vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px); 
+    --tamanho-footer: 80px;
+    
+
+}
+
+.header {
+    height:var(--tamanho-header);
+
+}
+
+
+
+.container {
+    display: flex;
+   
+    margin-right: 100px;
+    justify-content: center;
+}
+
+.header .container{
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+}
+
+.header a{
+text-decoration: none;
+color: #ffffff;
+
+}
+.header .li2{
+    text-decoration: none;
+    color: #e3b062;
+    
+    }
+
+
+.agora {
+    font-weight: 800;
+
+}
+
+.navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    list-style:none;
+    color: #e3b062;
+    
+}
+
+.titulo {
+    color: #fc6500;
+    width: fit-content;
+    align-items: center;
+}
+
+.banner{
+    height: var(--tamanho-banner);  
+    color: white;
+    background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+    background-size: cover;
+
+}
+.banner .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.banner .container p {
+    text-align: center;
+    justify-content: center;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+}
+.TextoE{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.banner .container span{
+    text-align: end;
+    font-weight: 800;
+    font-size: 30px;
+
+}
+
+.social{
+    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social .container .boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px;
+}
+.baixomagem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.box {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.box img {
+    width: 170px;
+    margin: 10px;
+}
+    
+
+/* footer */
+
+.footer {
+    align-items: center;
+    background-color: #32b9cd;
+    height: var(--tamanho-footer);
+    color: #fff;
+    font-size: 15px;
+   /* margin-top: 30px;*/
+}
+
+.version {
+    font-size : 12px;
+}
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - var(--tamanho-header) - var(--tamanho-footer)); 
+    background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+    background-size: cover;
+    
+}
+
+
+.card-login {
+    background-color: #f0f0f0; 
+    padding: 24px 40px;
+    border-radius: 18px;
+    width: var(--tamanho-login);
+    max-width: 800px;
+    text-align: center; 
+    align-self: center; 
+    margin: 0 auto;
+    
+  
+}
+
+
+.card-login h2 {
+    margin-bottom: 20px;
+    color: #eb004e;
+    text-align: center; 
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.campo {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.campo span {
+    display: flex;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #eb004e;
+    align-items: center;
+    text-align: center;
+}
+
+.campo input {
+    width: 500pox;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white; 
+    outline: none; 
+}
+
+.campo input:focus {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+.botao {
+    background-color: #eb004e;
+    color: #fff;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    width: 100px;
+    align-self: center;
+}
+
+.botao:hover {
+    background-color: #eb004e; 
+}
+
+
+.card-cadastro {
+   display: flex;
+    background-color: #f0f0f0; 
+    border-radius: 10px;
+    width: var(--tamanho-login);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    margin: 0 auto;
+}
+
+.card-cadastro h2 {
+    margin-bottom: 20px;
+    color: #eb004e;
+    text-align: center; 
+}
+
+.campo input {
+    width: 400px;
+    padding: 10px;
+    border: 2px solid #007bff; 
+    border-radius: 20px;
+    background-color: white; 
+    outline: none; 
+    box-sizing: border-box; 
+}
+
+.campo input:focus {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+.botao {
+    background-color: #eb004e;
+    padding: 8px 15px; 
+    border: none;
+    border-radius: 50px;
+    font-size: 14px; 
+    margin-top: 15px; 
+    align-self: center; 
+    margin-bottom: 15px;}
