@@ -1,0 +1,148 @@
+/* Não usar pure white or pure black: https://uxplanet.org/basicdesign-never-use-pure-black-in-typography-36138a3327a6 */
+/* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
+
+:root {
+    --primary-brand-color: #FF4500; /* Laranja como o tom de uma bola de basquete */
+    --secondary-brand-color: #ffffff; /* Preto para contraste */
+    /*--background-color: #F5F5F5;  Branco para um fundo neutro */
+    --accent-color: #ffbb00; /* Dourado para destacar pontuações e detalhes */
+    --success-color: #4CAF50; /* Verde para acertos */
+    --error-color: #FF0000; /* Vermelho para erros */
+    --font-family: "Arial", sans-serif;
+}
+
+body {
+    background-image: url(../assents/135049.gif);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#pontuacaoEJogo {
+    width: 80%;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background-color:transparent;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
+    color: var(--primary-brand-color);
+}
+
+button {
+    background-color: transparent;
+    color:black ;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-family);
+    transition: 0.3s ease, transform 0.2s ease;
+    margin: 10px;
+    
+}
+
+button:hover {
+    background-color:#FF0000;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #D3D3D3;
+    cursor: not-allowed;
+}
+
+#pontuacao {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+}
+
+#jogo {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center; 
+}
+
+#infoQuestao {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: black;
+}
+
+#perguntaDaQuestaoAtual {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#infoAlternativas {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+#opcoes {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 10px; 
+    width: 100%; 
+}
+
+.radio {
+    margin-right: 10px;
+}
+
+.option {
+    color: var(--background-color);
+    font-weight: bold;
+}
+
+#botoes {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px; 
+    margin-top: 20px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-success-with-bg {
+    color: var(--success-color);
+    background-color: rgba(76, 175, 80, 0.2);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.text-danger-with-bg {
+    color: var(--error-color);
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+

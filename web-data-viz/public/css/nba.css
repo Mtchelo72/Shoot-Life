@@ -8,7 +8,7 @@ body {
     background-image: url(../assents/215698.gif);
     background-repeat: no-repeat;
     background-size: 100%;
-    background-color: #c76000;
+    background-color: #c4742a;
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
@@ -130,7 +130,7 @@ color: orange;
     width: 300px;
     padding: 10px;
     background-color:transparent;
-    border: none;
+    
     border-radius: 7px;
     font-family: "Great Vibes", cursive;
     font-weight: 500;
@@ -141,16 +141,44 @@ color: orange;
     right: 35%;      
     bottom: 30px; 
 }
-.botao-A:hover {
-    background-color: #00000081;
-    transform: translateY(-5px);
-    border: 2px solid #ff2600;
+
+.botao-B{
+    display: flex; 
+    flex-direction: column;
+    margin-top: 10px;  
+    align-items: center;
+    width: 300px;
+    padding: 10px;
+    background-color:transparent;
+    border-radius: 7px;
+    font-family:fantasy;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    transition: transform 0.8s, background-color 0.8s, border 0.8s;
+    right: 35%;      
+    bottom: 30px; 
+    margin-bottom: 30px;
 }
+.botao-B:hover {
+    background-color: #ff2600;
+    transform: translateY(-5px);
+    border: 2px solid #000000;
+}
+
+.botao-A:hover {
+    background-color: #ff2600;
+    transform: translateY(-5px);
+    border: 2px solid #000000;
+}
+
 .inicio{
     display: flex;
     flex-direction: column;  
     justify-content: center;  
-    align-items: center;  
+    align-items: center; 
+    text-align: justify; 
     
     
     
@@ -189,6 +217,87 @@ color: orange;
     text-align: justify;
     
 }
+
+.inicio h4 {
+    font-style: italic;
+    font-size: 90px;
+    font-family: "Great Vibes", cursive; 
+    color: #ff0000; 
+    display: inline-block;
+    text-align: center;
+    overflow: hidden; 
+    z-index: 1;
+    -webkit-text-fill-color: black; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    animation: glowEffect 3s infinite; 
+    margin-bottom: 5px;
+}
+
+
+
+@keyframes glowEffect {
+    0% {
+        text-shadow: 2px 2px 4px rgb(255, 255, 255);
+    }
+    50% {
+        text-shadow: 4px 4px 8px rgb(255, 0, 0);
+    }
+    100% {
+        text-shadow: 2px 2px 4px rgb(255, 255, 255);
+    }
+}
+
+.inicio h5 {
+    font-style: italic;
+    font-size: 60px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: #ff0000; 
+    display: inline-block;
+    text-align: center;
+    overflow: hidden; 
+    z-index: 1;
+    -webkit-text-fill-color: black; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    animation: efeitotop2 3s infinite; 
+    margin-bottom: 5px;
+}
+@keyframes efeitotop2 {
+    0% {
+        text-shadow: 2px 2px 4px rgb(255, 255, 255);
+    }
+    50% {
+        text-shadow: 4px 4px 8px rgb(255, 255, 255);
+    }
+    100% {
+        text-shadow: 2px 2px 4px rgb(255, 255, 255);
+    }
+}
+.pulsar {
+    display: inline-block; 
+    animation: pulsar 1.5s infinite ease-in-out; 
+    transform-origin: center; 
+}
+
+/* Animação de pulsação */
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        opacity: 1; 
+        color: #ff0000;
+    }
+    50% {
+        transform: scale(1.7); 
+        opacity: 0.8; 
+        color: #ff0000;
+    
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1; 
+        
+    }
+}
+
 .inicio h3::before {
     content: "";
     position: absolute;
@@ -214,17 +323,18 @@ color: orange;
 
 .imagem-container {
     display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 16px; 
     justify-items: center; 
     padding: 30px;
     width: 100%;
     box-sizing: border-box; 
+    
 }
 
 
 .imagem-container img {
-    width: 100%; 
+    width: 50%; 
     height: auto; 
     border-radius: 8px; 
     cursor: pointer; 
@@ -232,11 +342,29 @@ color: orange;
 }
 
 .imagemtexto{
-    display: flex;
+    display: inline;
     justify-content: center;
     align-items: center;
+    border: 2px solid #bbbbbb; 
+      border-radius: 8px; 
+      margin: 10px; 
+      box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.863);
 }
 
+
+
+.imagemtexto2{
+    
+    display: inline; 
+    justify-content: center; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 10px;
+    border: 2px solid #bbbbbb; 
+      border-radius: 8px; 
+      margin: 10px; 
+      box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.863);
+}
 
 /* footer */
 
