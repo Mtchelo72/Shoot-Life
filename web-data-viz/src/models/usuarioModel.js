@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-// Função de autenticação de usuário
+// Função para autenticar o usuário
 function autenticar(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function autenticar(): ", email, senha);
 
@@ -24,16 +24,44 @@ function autenticar(email, senha) {
         });
 }
 
-// Função de cadastro de usuário
-function cadastrar(nome, email, cpf, senha) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, cpf, senha);
+// Função para verificar se o email já está cadastrado
+function verificarEmail(email) {
+    console.log("Verificando se o email já está cadastrado:", email);
 
     var instrucaoSql = `
-        INSERT INTO usuarios (nome, email, cpf, senha) VALUES ('${nome}', '${email}', ${cpf}, '${senha}');
+        SELECT * FROM usuarios WHERE email = '${email}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    
+
     return database.executar(instrucaoSql)
+        .then(resultado => {
+            return resultado.length > 0; // Retorna true se o email já existir
+        })
+        .catch(error => {
+            console.log("#ERRO: " + error);
+            throw error;
+        });
+}
+
+// Função para cadastrar um novo usuário
+function cadastrar(nome, email, cpf, senha) {
+    console.log("ACESSEI O USUARIO MODEL \n function cadastrar():", nome, email, cpf, senha);
+
+    // Primeiro, verificar se o email já está cadastrado
+    return verificarEmail(email)
+        .then(emailExiste => {
+            if (emailExiste) {
+                throw new Error("Email já cadastrado");
+            } else {
+                var instrucaoSql = `
+                    INSERT INTO usuarios (nome, email, cpf, senha) 
+                    VALUES ('${nome}', '${email}', ${cpf}, '${senha}');
+                `;
+                console.log("Executando a instrução SQL: \n" + instrucaoSql);
+
+                return database.executar(instrucaoSql);
+            }
+        })
         .catch(error => {
             console.log("#ERRO: " + error);
             throw error;
@@ -42,5 +70,6 @@ function cadastrar(nome, email, cpf, senha) {
 
 module.exports = {
     autenticar,
+    verificarEmail, // Exporta a função verificarEmail caso precise usá-la em outro lugar
     cadastrar
 };

@@ -18,11 +18,11 @@ function autenticar(req, res) {
 
                 if (resultadoAutenticar) { // Verifica se o usuário foi encontrado
                     res.json({
-                        id: resultadoAutenticar.idusuario, // Retorna o id do usuário
+                        id: resultadoAutenticar.idusuario,
                         email: resultadoAutenticar.email,
                         nome: resultadoAutenticar.nome,
                         cpf: resultadoAutenticar.cpf,
-                        senha: resultadoAutenticar.senha, // Retorna a senha (não recomendado em produção)
+                        senha: resultadoAutenticar.senha,
                     });
                 } else {
                     res.status(403).send("Email e/ou senha inválido(s)");
@@ -37,7 +37,6 @@ function autenticar(req, res) {
 }
 
 function cadastrar(req, res) {
-    // Recuperando os dados do corpo da requisição
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var cpf = req.body.cpfServer;
@@ -53,14 +52,28 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         return res.status(400).send("Sua senha está undefined!");
     } else {
-        // Chama o método de cadastro no model
-        usuarioModel.cadastrar(nome, email, cpf, senha)
-            .then(function (resultado) {
-                res.status(201).json(resultado); // Retorna resposta positiva após cadastro
+        // Primeiro, verificar se o email já está cadastrado
+        usuarioModel.verificarEmail(email)
+            .then(function (emailExiste) {
+                if (emailExiste) {
+                    // Retorna erro se o email já estiver cadastrado
+                    res.status(409).send("Email já cadastrado!");
+                } else {
+                    // Se o email não existir, prossegue com o cadastro
+                    usuarioModel.cadastrar(nome, email, cpf, senha)
+                        .then(function (resultado) {
+                            res.status(201).json(resultado);
+                        })
+                        .catch(function (erro) {
+                            console.log(erro);
+                            console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro);
+                            res.status(500).json({ error: erro.sqlMessage });
+                        });
+                }
             })
             .catch(function (erro) {
                 console.log(erro);
-                console.log("\nHouve um erro ao realizar o cadastro! Erro: ", erro);
+                console.log("\nHouve um erro ao verificar o email! Erro: ", erro);
                 res.status(500).json({ error: erro.sqlMessage });
             });
     }

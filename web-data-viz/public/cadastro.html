@@ -63,7 +63,7 @@
             </div>
             <div class="campo">
                 <span>cpf:</span>
-                <input id="cpf_input" class="iptCampos" placeholder="Seu cpf" />
+                <input id="cpf_input" type= 'number' class="iptCampos" placeholder="Seu cpf" />
               </div>
             <div class="campo">
               <span>Senha:</span>
@@ -105,6 +105,64 @@
     var cpfVar = cpf_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var caracteresEspeciais = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', '|', ';', ':', '"', "'", '<', '>', ',', '.', '?', '/'];
+
+var temMaiuscula = false;
+var temMinuscula = false;
+var temNumero = false;
+var temEspecial = false;
+
+
+for (var contador = 0; contador < senhaVar.length; contador++) {
+    var ver = senhaVar[contador];
+    
+    if (ver >= 'A' && ver <= 'Z') {
+        temMaiuscula = true; 
+    } else if (ver >= 'a' && ver <= 'z') {
+        temMinuscula = true; 
+    } else if (ver >= '0' && ver <= '9') {
+        temNumero = true; 
+    } else if (caracteresEspeciais.includes(ver)) {
+        temEspecial = true; 
+    }
+}
+
+/* Validações
+if (
+    senhaVar.length < 8 || !temMaiuscula || !temMinuscula || !temNumero || !temEspecial) 
+    {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML =
+        "A senha deve conter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial";
+    
+    finalizarAguardar();
+    return false;
+    }
+
+    if( confirmacaoSenhaVar!= senhaVar)
+  {
+    cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(confirmação de senha inválida)";
+
+      finalizarAguardar();
+      return false;
+  }
+  if (cpfVar.length !== 11) {
+  cardErro.style.display = "block";
+  mensagem_erro.innerHTML = "(CPF inválido, deve ter 11 dígitos)";
+  
+  finalizarAguardar();
+  return false;
+}
+
+if (!emailVar.includes('@')) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "Email inválido.";
+  
+    finalizarAguardar();
+    return false;
+}*/
     
 
     // Verificando se há algum campo em branco
@@ -117,10 +175,39 @@
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "(preencha todos os campos para continuar)";
 
       finalizarAguardar();
       return false;
+    } else if (!emailVar.includes('@')) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "Email inválido.";
+  
+    finalizarAguardar();
+    return false;
+}else if (cpfVar.length !== 11) {
+  cardErro.style.display = "block";
+  mensagem_erro.innerHTML = "(CPF inválido, deve ter 11 dígitos)";
+  
+  finalizarAguardar();
+  return false;
+} else if( confirmacaoSenhaVar!= senhaVar)
+  {
+    cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(confirmação de senha inválida)";
+
+      finalizarAguardar();
+      return false;
+  } else if (
+    senhaVar.length < 8 || !temMaiuscula || !temMinuscula || !temNumero || !temEspecial) 
+    {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML =
+        "A senha deve conter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial";
+    
+    finalizarAguardar();
+    return false;
     }
 
    /* // Verificando se o código de ativação é de alguma empresa cadastrada
@@ -166,16 +253,25 @@
 
           limparFormulario();
           finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
+        } else if (resposta.status === 409) {
+                // Caso o backend retorne status 409 (Conflito - Email já cadastrado)
+                cardErro.style.display = "block";
+                mensagem_erro.innerHTML = "Este email já está cadastrado. Tente usar outro.";
+                finalizarAguardar();
+            } else {
+                throw new Error("Houve um erro ao tentar realizar o cadastro!");
+            }
+        })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
         finalizarAguardar();
       });
 
     return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
   }
 
  /* // Listando empresas cadastradas 
