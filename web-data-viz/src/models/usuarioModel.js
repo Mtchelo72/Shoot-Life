@@ -5,7 +5,7 @@ function autenticar(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function autenticar(): ", email, senha);
 
     var instrucaoSql = `
-        SELECT idusuario, nome, email, senha FROM usuarios WHERE email = '${email}' AND senha = '${senha}';
+        SELECT idusuario, nome, email, senha FROM usuario WHERE email = '${email}' AND senha = '${senha}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     
@@ -29,7 +29,7 @@ function verificarEmail(email) {
     console.log("Verificando se o email já está cadastrado:", email);
 
     var instrucaoSql = `
-        SELECT * FROM usuarios WHERE email = '${email}';
+        SELECT * FROM usuario WHERE email = '${email}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
 
@@ -54,7 +54,7 @@ function cadastrar(nome, email, cpf, senha) {
                 throw new Error("Email já cadastrado");
             } else {
                 var instrucaoSql = `
-                    INSERT INTO usuarios (nome, email, cpf, senha) 
+                    INSERT INTO usuario (nome, email, cpf, senha) 
                     VALUES ('${nome}', '${email}', ${cpf}, '${senha}');
                 `;
                 console.log("Executando a instrução SQL: \n" + instrucaoSql);

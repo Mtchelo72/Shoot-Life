@@ -94,13 +94,24 @@
         },
 
         {
-            pergunta: "Qual destes números é ímpar?",
-            alternativaA: "Dez",
-            alternativaB: "Doze",
-            alternativaC: "Oito",
-            alternativaD: "Onze",
-            alternativaCorreta: "alternativaD"
+            pergunta: "Qual o maior pontuador da história da NBA?",
+            alternativaA: "Stephen Curry",
+            alternativaB: "Wilt Chamberlain",
+            alternativaC: "Lebron James",
+            alternativaD: "Kareem Abdul-Jabbar",
+            alternativaCorreta: "alternativaC"
+        },
+
+        
+        {
+            pergunta: "quem tem o maior numero de triplos-duplos na história da NBA?",
+            alternativaA: "Lebron James",
+            alternativaB: "Russel Westbrook",
+            alternativaC: "Tim Duncan",
+            alternativaD: "LaMelo Ball",
+            alternativaCorreta: "alternativaB"
         }
+
 
     ]
 
@@ -254,36 +265,25 @@
     }
 
     function finalizarJogo() {
-        let textoParaMensagemFinal = null
-        let classComCoresParaMensagemFinal = null
-        const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes
+    const porcentagemFinalDeAcertos = pontuacaoFinal / quantidadeDeQuestoes;
 
-        if (porcentagemFinalDeAcertos <= 0.3) {
-            textoParaMensagemFinal = "Parece que você não estudou..."
-            classComCoresParaMensagemFinal = "text-danger-with-bg"
-        }
-        else if (porcentagemFinalDeAcertos > 0.3 && porcentagemFinalDeAcertos < 0.9) {
-            textoParaMensagemFinal = "Pode melhorar na próxima, hein!"
-            classComCoresParaMensagemFinal = "text-warning-with-bg"
-        }
-        else if (porcentagemFinalDeAcertos >= 0.9) {
-            textoParaMensagemFinal = "Uau, parabéns!"
-            classComCoresParaMensagemFinal = "text-success-with-bg"
-        }
-
-        textoParaMensagemFinal += "<br> Você acertou " + Math.round((porcentagemFinalDeAcertos)*100) + "% das questões."
-
-
-        document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal
-        document.getElementById('msgFinal').classList.add(classComCoresParaMensagemFinal) 
-        document.getElementById('spanPontuacaoFinal').innerHTML = pontuacaoFinal
-
-        document.getElementById('jogo').classList.add("text-new-gray") 
-
-        btnProx.disabled = true
-        btnSubmeter.disabled = true
-        // btnConcluir.disabled = true
-        btnTentarNovamente.disabled = false
-
+    // Atualizar mensagem final
+    let textoParaMensagemFinal;
+    if (porcentagemFinalDeAcertos <= 0.3) {
+        textoParaMensagemFinal = "Parece que você não estudou...";
+    } else if (porcentagemFinalDeAcertos < 0.9) {
+        textoParaMensagemFinal = "Pode melhorar na próxima, hein!";
+    } else {
+        textoParaMensagemFinal = "Uau, parabéns!";
     }
+    textoParaMensagemFinal += `<br>Você acertou ${Math.round(porcentagemFinalDeAcertos * 100)}% das questões.`;
+    document.getElementById('msgFinal').innerHTML = textoParaMensagemFinal;
+
+    // Salvar dados no sessionStorage
+    sessionStorage.setItem('acertos', pontuacaoFinal);
+    sessionStorage.setItem('totalQuestoes', quantidadeDeQuestoes);
+
+    // Redirecionar para dashboard
+    window.location.href = "./dashboard.html";
+}
 </script>

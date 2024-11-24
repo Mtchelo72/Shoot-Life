@@ -27,8 +27,11 @@ CREATE TABLE quiz (
 
 create table escolha (
 	fk_idusuario int,
+	constraint fkidusuario foreign key (fk_idusuario) references usuario(idusuario),
 	fk_idquiz int,
-	constraint 
+	constraint fkidquiz foreign key (fk_idquiz) references quiz(idquiz),
+	
+	constraint pkescolha primary key(fk_idusuario, fk_idquiz)
 );
 
 

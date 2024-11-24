@@ -6,6 +6,7 @@ body {
     padding: 0;
     font-family: 'Playwrite', sans-serif;
     background-image: url(../assents/o\ esporte\ capa);
+    background-color: #000;
     background-repeat: no-repeat;
     background-size: 100%;
     overflow-x: hidden;
@@ -129,110 +130,122 @@ color: orange;
   font-style:oblique;
   font-size: 50px;
 }
-.sobre p{
-    display: block;
-    color: #fffffff8;
-    font-family: 'Times New Roman', Times, serif;
-  font-weight: 200;
-  font-style:oblique;
-  font-size: 20px;
+/* Centraliza o primeiro texto à direita da tela */
+.sobre #texto {
   display: flex;
-    flex-direction: row;
-    margin-left: 40%;
-    margin-right:10% ;
-    text-align: justify;
-    
-    
+  align-items: end;
+  text-align: justify;
+  margin-left: 500px;
+  margin-right: 70px;
+  padding: 0;
+  color: #fff;
 }
 
-.pontos {
-    display:inline-flex; 
-    align-items: center;
-    justify-items: center;
-    cursor: pointer; 
-    padding: 10px; 
-    background-color: transparent; 
-    border-radius: 100%; 
-    width:50px;
-    transition: all 0.8s ease; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
-    margin-inline: 60px;
-
-  }
-  
-  .pontos:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 15px rgba(255, 165, 0, 0.8); 
-    border: 2px solid rgba(255, 165, 0, 0.8); 
-  }
+/* Configura o layout das divs clicáveis */
+.informativos {
+  display: flex;
+  justify-content:center;
+  margin-right: 5px;
   
   
-  .pontos svg {
-    display: flex; 
-    margin: 0 auto; 
-    transition: transform 0.3s ease; 
-  }
-  .pontos img {
-    display: flex; 
-    margin: 0 auto; 
-    transition: transform 0.3s ease; 
-  }
+}
+
+.informativos .pontos {
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.2s;
+  margin-left: 350px;
+}
+
+
+
+.informativos .pontos:hover {
+  transform: scale(1.1);
+}
+
+/* Oculta inicialmente as divs de conteúdo */
+.saude, .lazer, .competicao {
+  display: none;
+  text-align: center;
+  align-items: center;
   
-  
-  .pontos:hover svg {
-    transform: scale(1.3); 
-  }
-
-
-  .informativos{
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    margin-left: 400px;
-  }
-
-  .saude{
-    display: none;
-    align-items: flex-start;
-    flex-direction:row;
-
-    
-  }
-
-  
+  margin: 10px;
+  padding: 15px;
+  gap: 20px;
  
-   #saude .saude{
-    display: flex;
-   
-    justify-content: baseline;
-  }
+  border-radius: 5px;
+}
 
-  .lazer{
-    display: none;
-  }
-  .competicao{
-    display: none;
-  }
+
+.saude img {
+  max-width: 30%; /* Garante que a imagem não ultrapasse metade da largura da div */
+  height: auto; /* Mantém a proporção da imagem */
+}
+#ibira {
+  display: flex; /* Flexbox para centralizar os itens */
+  justify-content: center; /* Centraliza as imagens horizontalmente */
+  align-items: center; /* Centraliza as imagens verticalmente */
+  flex-wrap: wrap; /* Permite que as imagens quebrem linha, caso necessário */
+  gap: 10px; /* Espaçamento entre as imagens */
+  border: 2px solid #bbbbbb; 
+  border-radius: 8px; 
+  margin: 10px; 
+  box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.863);
+}
+
+#ibira img {
+  border: 2px solid #bbbbbb; /* Define a borda das imagens */
+  border-radius: 5px; /* Borda arredondada, se necessário */
+  padding: 5px; /* Adiciona um pequeno espaço entre a borda e a imagem */
+}
+
+.saude p {
+  display: flex;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
   
+}
 
-.botao-A{
-    display: inline-block; 
-    margin-top: 10px;  
-    align-items: end;
-    width: 300px;
-    padding: 10px;
-    background-color: #ff5e0075;
-    border: none;
-    border-radius: 7px;
-    font-family: "Great Vibes", cursive;
-    font-weight: 500;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.8s, background-color 0.8s, border 0.8s;
-    right: 35%;      
-    bottom: 20px; 
+
+.saude p, .lazer p, .competicao p {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  color: aliceblue;
+}
+
+
+/* Garante que o layout seja responsivo */
+@media (max-width: 768px) {
+  .informativos {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .informativos .pontos {
+      margin-bottom: 10px;
+  }
+}
+
+
+.botao-A {
+  display: flex; /* Altera para flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  margin-top: 10px;  
+  width: 300px;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  border-radius: 7px;
+  font-family: "Great Vibes", cursive;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.8s, background-color 0.8s, border 0.8s;
+  bottom: 20px;
 }
 .botao-A:hover {
     background-color: #000;

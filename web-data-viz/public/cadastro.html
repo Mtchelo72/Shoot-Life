@@ -254,7 +254,7 @@ if (!emailVar.includes('@')) {
           limparFormulario();
           finalizarAguardar();
         } else if (resposta.status === 409) {
-                // Caso o backend retorne status 409 (Conflito - Email já cadastrado)
+                // Caso o backend retorne status 409 (Conflito - Email já cadastrado) codigo de erro para isso, e usa === para maior precisão, n confunde com string
                 cardErro.style.display = "block";
                 mensagem_erro.innerHTML = "Este email já está cadastrado. Tente usar outro.";
                 finalizarAguardar();
