@@ -1,6 +1,7 @@
 /* pagina mural */
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Great+Vibes&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Unlock&display=swap');
 
 /* Página de Gráficos */
 .dash-header {
@@ -14,6 +15,7 @@
   background-color: #161618;
   height: 100vh;
   overflow: auto;
+  background-image: url(../assents/374227.png);
 }
 
 .janela {
@@ -31,12 +33,13 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
+  border-right: 3px solid #fa4f00;
   background-color: #212124;
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #fa4f00;
+  font-family: "Great Vibes", cursive;
 }
 
 .hello {
@@ -58,7 +61,7 @@
 .btn-nav,
 .btn-logout {
   color: white;
-  background-color: #e6005a;
+  background-color: #fa4f00;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -67,20 +70,20 @@
 
 .btn-nav-white {
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid #fa4f00;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #fa4f00;
   margin: 0;
 }
 
 .btn-logout {
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #fa4f00;
   margin-bottom: 100px;
   padding: 10px 15px;
 }
@@ -98,33 +101,34 @@
 .chart-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza o conteúdo no eixo horizontal */
-  margin: 20px auto; /* Adiciona espaçamento vertical e centraliza horizontalmente */
-  max-width: 400px; /* Define uma largura máxima para manter o layout responsivo */
+  align-items: center; 
+  margin: 20px auto; 
+  max-width: 400px; 
 }
 
 .chart-container h2 {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 15px; /* Espaçamento entre o título e o gráfico */
-  color: #333;
+  margin-bottom: 15px; 
+  color: #ffffff;
 }
 
 #kpiChart {
   width: 100%;
-  max-width: 300px; /* Limita o tamanho do gráfico */
+  max-width: 300px; 
+  
 }
 
 #kpideStatus {
-  margin-top: 20px; /* Espaçamento entre o gráfico e o texto */
-  font-size: 18px; /* Tamanho da fonte */
-  font-weight: bold; /* Texto em negrito */
-  color: #4CAF50; /* Cor destacada para o status */
+  margin-top: 20px; 
+  font-size: 18px; 
+  font-weight: bold; 
+  color: #4CAF50; 
   text-align: center;
-  border: 2px solid #4CAF50; /* Adiciona uma borda ao redor do texto */
-  padding: 10px; /* Espaçamento interno */
-  border-radius: 8px; /* Bordas arredondadas */
-  background-color: #f9f9f9; /* Fundo claro */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destaque */
+  border: 2px solid #4CAF50; 
+  padding: 10px; 
+  border-radius: 8px; 
+  background-color: #f9f9f9; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }

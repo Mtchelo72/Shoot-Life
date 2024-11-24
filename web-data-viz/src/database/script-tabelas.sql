@@ -15,12 +15,14 @@ CREATE TABLE usuario (
 	idusuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
+	cpf CHAR(11),
 	senha VARCHAR(50),
+	confirmacao varchar(50)
 	
 );
 
 CREATE TABLE quiz (
-	idquiz INT PRIMARY KEY AUTO_INCREMENT,
+	idquiz INT PRIMARY KEY,
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
 );

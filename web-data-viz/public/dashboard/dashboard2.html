@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assents/image.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Resultados</title>
+    <title>ShootLife | Resultados</title>
 
     <link rel="stylesheet" href="../css2/dashboards.css">
     <link rel="stylesheet" href="../css2/estilo.css" />
@@ -27,7 +27,7 @@
     <div class="janela">
         <!-- Sidebar -->
         <div class="header-left">
-            <h1>AquaTech</h1>
+            <h1>ShootLife</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -52,7 +52,7 @@
             <div class="chart-container">
                 <h2>Questões</h2>
                 <canvas id="kpiChart"></canvas>
-                <div id="kpideStatus"></div> <!-- Centralizado e estilizado -->
+                <div id="kpideStatus"></div> 
             </div>
         </div>
     </div>
@@ -73,17 +73,17 @@
         var porcentagem = (acertos / totalQuestoes) * 100;
         var erros = totalQuestoes - acertos;
 
-        // Configurar gráfico rosquinha (Acertos x Erros)
+        // Configurar gráfico Doughnut (Acertos x Erros)
         var kpiCtx = document.getElementById('kpiChart').getContext('2d');
         new Chart(kpiCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Acertos', 'Erros'],
-                datasets: [{
-                    data: [acertos, erros],
-                    backgroundColor: ['#4CAF50', '#F44336']
-                }]
-            },
+    type: 'doughnut',
+    data: {
+        labels: ['Acertos', 'Erros'],
+        datasets: [{
+            data: [acertos, erros],
+            backgroundColor: ['#4CAF50', '#F44336']
+        }]
+    },
     options: {
         plugins: {
             legend: {
@@ -107,10 +107,10 @@
         var kpiStatus = document.getElementById('kpideStatus');
 
         if (erros === 0) {
-            status = 'Especialista em NBA';
+            status = 'Especialista em NBB';
         } else if (erros < 2) {
             status = 'Conhecedor da Liga';
-            kpiStatus.textContent = `você entende da NBA, pelo visto é um ${status} !!`;
+            kpiStatus.textContent = `você entende da NBB, pelo visto é um ${status} !!`;
         } else {
             status = 'Desbravador';
             kpiStatus.textContent = `Continue tentando, você está se mostrando ser um ${status}`;

@@ -76,40 +76,40 @@
     const listaDeQuestoes = [
 
         {
-            pergunta: "Qual franquia é a maior campeã da NBA?",
+            pergunta: "Quem foi o primeiro time campeão da NBB?",
             alternativaA: "L.A. Lakers",
-            alternativaB: "Boston Celtics",
-            alternativaC: "Chicago Bulls",
-            alternativaD: "San Antônio Spurs",
+            alternativaB: "Flamengo",
+            alternativaC: "Vasco",
+            alternativaD: "Paulistano",
             alternativaCorreta: "alternativaB"
         },
 
         {
-            pergunta: "qual o jogador que foi o maior responsavel por colocar o Chicago Bulls no mapa?",
-            alternativaA: "Steve Nash",
-            alternativaB: "Scott Pippen",
-            alternativaC: "Denis Roddiman",
-            alternativaD: "Michael Jordan",
-            alternativaCorreta: "alternativaD"
+            pergunta: "Atualmente, quem é o maior campeão da liga?",
+            alternativaA: "Bauru",
+            alternativaB: "Franca",
+            alternativaC: "Flamengo",
+            alternativaD: "Pato Basquete",
+            alternativaCorreta: "alternativaC"
         },
 
         {
-            pergunta: "Qual o maior pontuador da história da NBA?",
-            alternativaA: "Stephen Curry",
-            alternativaB: "Wilt Chamberlain",
-            alternativaC: "Lebron James",
-            alternativaD: "Kareem Abdul-Jabbar",
-            alternativaCorreta: "alternativaC"
+            pergunta: "Em que time a 55ª escolha geral no Draft da NBA de 2022, Gui Santos, se destacou na NBB?",
+            alternativaA: "Minas",
+            alternativaB: "Flamengo",
+            alternativaC: "Brasilia ",
+            alternativaD: "Paulistano",
+            alternativaCorreta: "alternativaA"
         },
 
         
         {
-            pergunta: "quem tem o maior numero de triplos-duplos na história da NBA?",
-            alternativaA: "Lebron James",
-            alternativaB: "Russel Westbrook",
-            alternativaC: "Tim Duncan",
-            alternativaD: "LaMelo Ball",
-            alternativaCorreta: "alternativaB"
+            pergunta: "Quem é a organizadora oficial da NBB?",
+            alternativaA: "CBB",
+            alternativaB: "NBB",
+            alternativaC: "LNB",
+            alternativaD: "LDB",
+            alternativaCorreta: "alternativaC"
         }
 
 
@@ -130,8 +130,7 @@
     }
 
     function iniciarQuiz() {
-        var quiz = 1;
-        
+        var quiz = 2;
         document.getElementById('pontuacao').style.display = "flex"
         document.getElementById('jogo').style.display = "flex"
         document.getElementById('btnIniciarQuiz').style.display = "none"
@@ -143,7 +142,7 @@
         btnSubmeter.disabled = false
         btnProx.disabled = true
         // btnConcluir.disabled = true
-        btnTentarNovamente.disabled = true 
+        btnTentarNovamente.disabled = true
 
         fetch("/quiz/quiz", {
                     method: "POST",
@@ -302,6 +301,6 @@
     sessionStorage.setItem('totalQuestoes', quantidadeDeQuestoes);
 
     // Redirecionar para dashboard
-    window.location.href = "./dashboard.html";
+    window.location.href = "./dashboard2.html";
 }
 </script>
