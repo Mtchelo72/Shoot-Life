@@ -5,7 +5,7 @@ function quiz(req, res) {
     var idusuario = req.body.idusuarioServer;
     
         
-                    // Se o email não existir, prossegue com o cadastro
+                    
                     quizModel.quiz(quiz, idusuario)
                         .then(function (resultado) {
                             res.status(201).json(resultado);
