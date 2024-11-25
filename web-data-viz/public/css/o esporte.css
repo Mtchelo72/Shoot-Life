@@ -182,11 +182,11 @@ color: orange;
   height: auto; /* Mantém a proporção da imagem */
 }
 #ibira {
-  display: flex; /* Flexbox para centralizar os itens */
-  justify-content: center; /* Centraliza as imagens horizontalmente */
-  align-items: center; /* Centraliza as imagens verticalmente */
-  flex-wrap: wrap; /* Permite que as imagens quebrem linha, caso necessário */
-  gap: 10px; /* Espaçamento entre as imagens */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; /* deixa aquebra favoravel*/
+  gap: 10px;
   border: 2px solid #bbbbbb; 
   border-radius: 8px; 
   margin: 10px; 
@@ -194,9 +194,9 @@ color: orange;
 }
 
 #ibira img {
-  border: 2px solid #bbbbbb; /* Define a borda das imagens */
-  border-radius: 5px; /* Borda arredondada, se necessário */
-  padding: 5px; /* Adiciona um pequeno espaço entre a borda e a imagem */
+  border: 2px solid #bbbbbb; 
+  border-radius: 5px; 
+  padding: 5px; 
 }
 
 .saude p {
@@ -216,7 +216,7 @@ color: orange;
 }
 
 
-/* Garante que o layout seja responsivo */
+/* deixa certo na pag */
 @media (max-width: 768px) {
   .informativos {
       flex-direction: column;
@@ -230,9 +230,9 @@ color: orange;
 
 
 .botao-A {
-  display: flex; /* Altera para flexbox */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
   margin-top: 10px;  
   width: 300px;
   padding: 10px;

@@ -4,13 +4,13 @@ function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
-    // Validação dos parâmetros
+    
     if (email == undefined) {
         return res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         return res.status(400).send("Sua senha está indefinida!");
     } else {
-        // Chama o método de autenticação no model
+        
         usuarioModel.autenticar(email, senha)
             .then(function (resultadoAutenticar) {
                 console.log(`Resultados encontrados: ${resultadoAutenticar.length}`);
@@ -52,14 +52,14 @@ function cadastrar(req, res) {
     } else if (senha == undefined) {
         return res.status(400).send("Sua senha está undefined!");
     } else {
-        // Primeiro, verificar se o email já está cadastrado
+        
         usuarioModel.verificarEmail(email)
             .then(function (emailExiste) {
                 if (emailExiste) {
-                    // Retorna erro se o email já estiver cadastrado
+                    
                     res.status(409).send("Email já cadastrado!");
                 } else {
-                    // Se o email não existir, prossegue com o cadastro
+                   
                     usuarioModel.cadastrar(nome, email, cpf, senha)
                         .then(function (resultado) {
                             res.status(201).json(resultado);

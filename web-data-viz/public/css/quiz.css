@@ -1,13 +1,13 @@
 /* Não usar pure white or pure black: https://uxplanet.org/basicdesign-never-use-pure-black-in-typography-36138a3327a6 */
 /* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
 
+/*padronizaros ngc com as vari*/
 :root {
-    --primary-brand-color: #FF4500; /* Laranja como o tom de uma bola de basquete */
-    --secondary-brand-color: #ffffff; /* Preto para contraste */
-    /*--background-color: #F5F5F5;  Branco para um fundo neutro */
-    --accent-color: #ffbb00; /* Dourado para destacar pontuações e detalhes */
-    --success-color: #4CAF50; /* Verde para acertos */
-    --error-color: #FF0000; /* Vermelho para erros */
+    --primary-brand-color: #FF4500; 
+    --secondary-brand-color: #ffffff; 
+    --accent-color: #ffbb00; 
+    --success-color: #4CAF50; 
+    --error-color: #FF0000; 
     --font-family: "Arial", sans-serif;
 }
 
