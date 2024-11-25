@@ -1,4 +1,4 @@
-Projeto em desenvolvimento, sobre um site que busca disceminar a importancia e relevância do Basquete no cenário esportivo, social e cultural. 
+Projeto em desenvolvimento, sobre um site que busca disseminar a importancia e relevância do Basquete no cenário esportivo, social e cultural. 
   Tudo isso através de informações de ligas espalhadas pelo mundo, cada uma com suas estrelas, suas regras e seus jeitos de tratar e administrar o esporte tão necessário e importante
 para um desenvolvimento saudável e visionario do ser humano.
 
